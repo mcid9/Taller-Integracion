@@ -1,0 +1,5 @@
+Midnight Blue 1: #071E43
+Midnight Blue 2: #0C316F
+Light Grey: #D5D2CD
+Dark Slate Gray: #07090F
+Dim Gray: #6F6D6C

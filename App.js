@@ -1,19 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+// VISTAS
+import LoginScreen from './src/Views/Login';
+import RegistroScreen from './src/Views/Registro';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import NavigationService from './src/Components/NavigationService';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
+const RootStack = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Registro: RegistroScreen
   },
-});
+  {
+    headerMode: 'none',
+    initialRouteName: 'Login',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends Component {
+  render() {
+    //return <AppContainer />;
+    return (
+      <AppContainer
+        ref={navigatorRef => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+      />
+    );
+
+  }
+}

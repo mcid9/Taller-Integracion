@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TallerIntegracion",
-    "slug": "TallerIntegracion",
+    "name": "Find Ink",
+    "slug": "FindInk",
     "platforms": [
       "ios",
       "android",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#071E43"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
