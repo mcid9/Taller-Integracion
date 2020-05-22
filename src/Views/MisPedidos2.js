@@ -1,0 +1,143 @@
+import React from 'react';
+import { View, Text, StatusBar, ScrollView } from 'react-native';
+import { Header, Input, Card, Avatar, Divider, ListItem } from 'react-native-elements';
+import * as NavigationService from '../Controller/NavigationService';
+import { styles, Colors, Sizes } from '../Css/Styles';
+
+export default class MisPedidos2 extends React.Component{
+    item(){
+        NavigationService.navigate('MisPedidos3');
+    }
+    render(){
+        return(
+            <View style= {styles.mainContainer}>
+                <StatusBar hidden />
+                <View styles={styles.headerContainer}>
+                    <Header
+                        leftComponent= {{
+                            icon: 'arrow-left',
+                            color: Colors.textPrimary, 
+                            type: 'simple-line-icon', 
+                            name: 'arrow-left'
+                        }}
+                        centerComponent={{ text: 'Detalle pedido', style: { color: Colors.textPrimary } }}
+                        rightComponent= {{
+                            icon: 'trash',
+                            color: Colors.textPrimary, 
+                            type: 'simple-line-icon', 
+                            name: 'trash'
+                        }}
+                        containerStyle= {{backgroundColor: Colors.primary}}
+                    />
+                </View>
+
+                <ScrollView>
+                    <View style={styles.bodyContainer}>
+                        <Card containerStyle={styles.boxPedido}>
+                            <View style= {{
+                                flexDirection: 'row'
+                            }}>
+                                <Avatar 
+                                    rounded
+                                    source= {require('../../assets/icon.png')}
+                                    size= 'large'
+                                    containerStyle= {{marginRight: 5}}
+                                />
+                                <View style= {{
+                                    flexDirection: 'column',
+                                    alignSelf: 'center'
+                                    
+                                }}>
+                                    <Text style= {styles.bodyText} >Titulo del pedido</Text>
+                                </View>
+                            </View>
+
+                            <Divider style={styles.divider} />
+
+                            <Text style= {{alignSelf: "center", color: Colors.textPrimary}} >Tags</Text>
+
+                            <Divider style={styles.divider} />
+
+                            <Text style= {{alignSelf: "center", justifyContent: 'center', color: Colors.textPrimary}} >Descripcion pedido:</Text>
+                            
+                            <Divider style={styles.divider} />
+                            
+                            
+                        </Card>
+                        
+                        <Text style= {{
+                            alignSelf: 'center', 
+                            justifyContent: 'center', 
+                            color: Colors.accent,
+                            fontSize: Sizes.fontHeader
+                        }}>
+                            Tatuadores interesados:
+                        </Text>
+
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        <ListItem
+                            style={styles.containerItem}
+                            leftAvatar= { { source: require('../../assets/icon.png') } }
+                            title= 'Username del tatuador'
+                            subtitle= 'Puntaje del tatuador'
+                            bottomDivider
+                            onPress= {() =>this.item()}
+                        />
+                        
+                    </View>
+                </ScrollView>
+
+                <View style={styles.footerContainer}>
+                    
+                </View>
+            </View>
+        );
+    }
+}
