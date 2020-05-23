@@ -49,10 +49,13 @@ export default class PedidosTomados2 extends React.Component{
 
                             <Divider style={styles.divider} />
 
-                            <Text style= {{alignSelf: "center", justifyContent: 'center', color: Colors.textPrimary}} >Descripcion pedido:</Text>
+                            <Text style= {{alignSelf: "center", color: Colors.textPrimary}} >Descripcion pedido:</Text>
                             
                             <Divider style={styles.divider} />
                             
+                            <Text style= {{alignSelf: "center", color: Colors.textPrimary}} >Imagen(opcional):</Text>
+
+                            <Divider style={styles.divider} />
                             
                         </Card>
 

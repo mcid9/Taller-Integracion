@@ -8,6 +8,9 @@ export default class MisPedidos1 extends React.Component{
     item(){
         NavigationService.navigate('MisPedidos2')
     }
+    nuevoPedido(){
+        NavigationService.navigate('MisPedidos4')
+    }
     render(){
         return(
             <View style= {styles.mainContainer}>

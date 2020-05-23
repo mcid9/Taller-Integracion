@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StatusBar, ScrollView } from 'react-native';
-import { Header, Input, Card, Avatar, Divider, ListItem } from 'react-native-elements';
+import { Header, Input, Card, Avatar, Divider, ListItem, Badge } from 'react-native-elements';
 import * as NavigationService from '../Controller/NavigationService';
 import { styles, Colors, Sizes } from '../Css/Styles';
 
@@ -64,6 +64,11 @@ export default class MisPedidos2 extends React.Component{
                             
                             
                         </Card>
+
+                        <Badge 
+                            status= 'error'
+                            value= 'Pedido sin tomar'
+                        />
                         
                         <Text style= {{
                             alignSelf: 'center', 

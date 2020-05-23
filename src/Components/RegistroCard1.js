@@ -45,11 +45,14 @@ export default class RegistroCard1 extends React.Component{
                         leftIcon = {{ type: 'simple-line-icon', name: 'lock' }}
                     />
 
-                    <Text style={styles.bodyText}>Ingrese fecha de nacimiento:</Text>
+                    <Button
+                        title= 'Seleccionar edad'
+                        buttonStyle={styles.button}
+                    />
 
                     <Button
                         onPress= {() =>this.onButtonPress()}
-                        title= 'Siuiente'
+                        title= 'Siguiente'
                         buttonStyle={styles.button}
                     />
                 </Card>
