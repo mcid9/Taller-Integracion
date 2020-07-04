@@ -7,6 +7,7 @@ import { navigationRef } from './src/Controller/NavigationService';
 import Login from './src/Views/Login';
 import Registro1 from './src/Views/Registro1';
 import Registro2 from './src/Views/Registro2';
+import Admin from './src/Views/Admin';
 import Pedidos1 from './src/Views/Pedidos1';
 import Pedidos2 from './src/Views/Pedidos2';
 import Pedidos3 from './src/Views/Pedidos3';
@@ -28,6 +29,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Registro1" component={Registro1} />
         <Stack.Screen name="Registro2" component={Registro2} />
+        <Stack.Screen name="Admin" component={Admin} />
         <Stack.Screen name="Pedidos1" component={Pedidos1} />
         <Stack.Screen name="Pedidos2" component={Pedidos2} />
         <Stack.Screen name="Pedidos3" component={Pedidos3} />
