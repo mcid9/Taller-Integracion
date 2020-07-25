@@ -5,9 +5,34 @@ import { styles, Colors } from '../Css/Styles';
 import * as NavigationService from '../Controller/NavigationService';
 
 export default class Pedidos1 extends React.Component{
-    item(){
-        NavigationService.navigate('Pedidos2')
+    constructor(props){
+        super(props)
+        this.state = {
+            listRequest: ''
+        }
     }
+
+    componentDidMount = () =>{
+        this.getRequest()
+    }
+
+    getRequest = async() =>{
+        const url = 'http://192.168.1.112:8300/orders/index'
+        let data =
+        {
+            method: 'POST',
+            headers: {Accept:'aplication/json','Content-Type':'aplication/json'}
+        }
+        fetch(url,data).then((response) => response.json()).then((responseJson) =>
+            {
+                console.log(responseJson)
+                this.setState({listRequest:responseJson})
+            }
+        )
+    }
+ /*   item(){
+        NavigationService.navigate('Pedidos2')
+    }*/
     render(){
         return(
             <View style= {styles.mainContainer}>
@@ -31,67 +56,26 @@ export default class Pedidos1 extends React.Component{
                     />
                 </View>
 
-                <ScrollView>
-                    <View style={styles.bodyContainer}>
-                        
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                        <ListItem
-                            style={styles.containerItem}
-                            leftAvatar= { { source: require('../../assets/icon.png') } }
-                            title= 'Titulo del pedido'
-                            subtitle= 'tags'
-                            bottomDivider
-                            onPress= {() =>this.item()}
-                        />
-                    </View>
-                </ScrollView>
+                <View style={styles.bodyContainer}>
+                    <FlatList
+                        style= {{width: '100%'}}
+                        data = {this.state.listRequest.slice(0,this.state.visible)}
+                        renderItem = {
+                            ({item}) =>
+                            <ListItem
+                                style={styles.containerItem}
+                                leftAvatar= { { source: require('../../assets/icon.png') } }
+                                key = {String(item.id)}
+                                title = {item.description}
+                                subtitle = {item.id_client}
+                                topDivider={true}
+                                bottomDivider={true}
+                                onPress={ () => NavigationService.navigate('Pedidos2')}
+                            />
+                        }
+                        keyExtractor={item => String(item.id)}
+                    />
+                </View>
 
                 <View style={styles.footerContainer}>
 

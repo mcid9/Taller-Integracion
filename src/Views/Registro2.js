@@ -6,11 +6,9 @@ import RegistroCard2 from '../Components/RegistroCard2';
 export default class Registro2 extends React.Component{
     render(){
         return(
-            <ScrollView >
-                <View style={styles.mainContainer}>
-                    <RegistroCard2></RegistroCard2>
-                </View>
-            </ScrollView>
+            <View style={styles.mainContainer}>
+                <RegistroCard2></RegistroCard2>
+            </View>
         );
     }
 }

@@ -1,48 +1,53 @@
 import React, { useState } from "react";
-import { View, Button, Platform } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import { View, Text } from "react-native";
+import { Button } from "react-native-elements";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
+import * as GlobalValues from '../Controller/GlobalValues';
+import { styles, Colors } from '../Css/Styles';
 
-const App = () => {
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState("date");
-  const [show, setShow] = useState(false);
+const DateTimePicker = () => {
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === "ios");
-    setDate(currentDate);
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
   };
 
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
   };
 
-  const showDatepicker = () => {
-    showMode("date");
-  };
+  const handleConfirm = (date) => {
+    let day = date.getDate()
+    let month = date.getMonth()+1
+    let year = date.getFullYear()
+    if(month < 10){
+      GlobalValues.almacenar("birthdate",(year+'-0'+month+'-'+day))
+      console.log(year+'-0'+month+'-'+day)
+    }else{
+      GlobalValues.almacenar("birthdate",(year+'-'+month+'-'+day))
+      console.log(year+'-'+month+'-'+day)
+    }
 
-  const showTimepicker = () => {
-    showMode("time");
+    hideDatePicker();
   };
 
   return (
     <View>
-        <Button onPress={showDatepicker} title="Show date picker!" />
-        <Button onPress={showTimepicker} title="Show time picker!" />
-    {show && (
-        <DateTimePicker
-            testID="dateTimePicker"
-            timeZoneOffsetInMinutes={0}
-            value={date}
-            mode={mode}
-            is24Hour={true}
-            display="default"
-            onChange={onChange}
-        />
-    )}
+      <Button 
+        title="Seleccione edad" 
+        buttonStyle={styles.button}
+        onPress={showDatePicker} 
+      />
+      
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode="date"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+        
+      />
     </View>
-    );
+  );
 };
 
-export default App;
+export default DateTimePicker;

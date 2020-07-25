@@ -37,7 +37,6 @@ export const styles = StyleSheet.create({
         width: wp('100%'),
         height: hp('100%'),
         flexDirection: 'column',
-        justifyContent: 'center',
         backgroundColor: Colors.lightPrimary
     },
 
@@ -51,7 +50,7 @@ export const styles = StyleSheet.create({
     },
     bodyContainer: {
         alignItems: 'center',
-        marginTop: 3,
+        marginTop: 10,
         marginBottom: 40
     },
     footerContainer: {
@@ -65,6 +64,18 @@ export const styles = StyleSheet.create({
     box: {
         width: wp('90%'),
         height: 155,
+        backgroundColor: Colors.primary,
+        marginBottom: 10,
+        borderRadius: 6,
+        borderColor: Colors.accent,
+        paddingVertical: 5,
+        paddingHorizontal: 10
+    },
+
+    box2: {
+        width: wp('90%'),
+        flexDirection: 'row',
+        height: 85,
         backgroundColor: Colors.primary,
         marginBottom: 10,
         borderRadius: 6,
@@ -107,7 +118,9 @@ export const styles = StyleSheet.create({
     },
 
     containerItem: {
-        width: '95%',
+        width: wp('98%'),
+        marginLeft: 4,
+        marginRight: 4
     },
 
     containerCard: {
@@ -131,8 +144,12 @@ export const styles = StyleSheet.create({
         margin: 4
     },
     input: {
-        marginLeft:'2%',
+        marginLeft:'3%',
         width: wp('80%')
+    },
+    inputLabel:{
+        color: Colors.textPrimary,
+        
     },
     SocialIcon: {
         marginBottom: 5
@@ -141,7 +158,13 @@ export const styles = StyleSheet.create({
         marginBottom: 7,
         marginTop: 7,
         backgroundColor: Colors.accent,
-        borderRadius: 6
+        borderRadius: 6,
+    },
+    buttonRed: {
+        marginBottom: 7,
+        marginTop: 7,
+        backgroundColor: 'red',
+        borderRadius: 6,
     },
     Drawer: {
         backgroundColor: Colors.primary,

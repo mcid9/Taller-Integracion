@@ -6,11 +6,9 @@ import LoginCard from '../Components/LoginCard';
 export default class Login extends React.Component{
     render(){
         return(
-            <ScrollView>
-                <View style={styles.mainContainer}>
-                    <LoginCard></LoginCard>
-                </View>
-            </ScrollView>
+            <View style={styles.mainContainer}>
+                <LoginCard></LoginCard>
+            </View>
         );
     }
 }

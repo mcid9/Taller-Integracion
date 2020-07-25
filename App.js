@@ -18,6 +18,7 @@ import MisPedidos4 from './src/Views/MisPedidos4';
 import PedidosTomados1 from './src/Views/PedidosTomados1';
 import PedidosTomados2 from './src/Views/PedidosTomados2';
 import Perfil from './src/Views/Perfil';
+import ModificaPerfil1 from './src/Views/ModificaPerfil1';
 import Drawer from './src/Components/Drawer';
 
 
@@ -40,6 +41,7 @@ export default function App() {
         <Stack.Screen name="PedidosTomados1" component={PedidosTomados1} />
         <Stack.Screen name="PedidosTomados2" component={PedidosTomados2} />
         <Stack.Screen name="Perfil" component={Perfil} />
+        <Stack.Screen name="ModificaPerfil1" component={ModificaPerfil1} />
         <Stack.Screen name="Drawer" component={Drawer} />
       </Stack.Navigator>
     </NavigationContainer>
