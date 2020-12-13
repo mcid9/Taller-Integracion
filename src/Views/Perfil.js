@@ -61,14 +61,19 @@ export default class Perfil extends Component {
     
 
     render() {
-        let sn = this.state.socialnetworks.map((myvalue, index) => {
-            return(
-                <SocialIcon
-                    type={myvalue.name}
-                    key={index}
-                />
-            )
-        });
+        let sn;
+        if(this.state.socialnetworks.length > 0){
+            sn = this.state.socialnetworks.map((myvalue, index) => {
+                return(
+                    <SocialIcon
+                        type={myvalue.name}
+                        key={index}
+                    />
+                )
+            });
+        }else{
+            sn = <Text style= {styles.bodyText}>No tiene redes sociales registradas</Text>
+        }
 
         return (
         <View style={styles.mainContainer}>

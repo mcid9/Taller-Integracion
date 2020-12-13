@@ -144,8 +144,8 @@ export const styles = StyleSheet.create({
         margin: 4
     },
     input: {
-        marginLeft:'3%',
-        width: wp('80%')
+        width: wp('80%'),
+        
     },
     inputLabel:{
         color: Colors.textPrimary,

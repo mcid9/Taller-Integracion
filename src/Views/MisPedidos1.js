@@ -24,17 +24,12 @@ export default class MisPedidos1 extends React.Component{
                             name: 'menu'
                         }}
                         centerComponent={{ text: 'Mis Pedidos', style: { color: Colors.textPrimary } }}
-                        rightComponent={{
-                            icon: 'magnifier', 
-                            color: Colors.textPrimary, 
-                            type: 'simple-line-icon', 
-                            name: 'magnifier'
-                        }}
                         rightComponent={{ 
                             icon: 'plus', 
                             color: Colors.textPrimary, 
                             type: 'simple-line-icon', 
-                            name: 'plus'
+                            name: 'plus',
+                            onPress: () => this.nuevoPedido()
                         }}
                         containerStyle= {{backgroundColor: Colors.primary}}
                     />
